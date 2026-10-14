@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { whatsappUrl } from "../data/contact";
 import Header from "../components/Header";
 import Products from "../components/Products";
@@ -15,9 +16,7 @@ export default function Home() {
             Diseños únicos para regalos, negocios y emprendimientos
           </div>
           
-          <div className="mb-6 text-3xl md:text-4xl font-bold tracking-[0.25em] uppercase bg-gradient-to-r from-pink-500 via-blue-500 to-green-500 text-transparent bg-clip-text">
-          ESTAMPA SUR
-          </div>
+          <Image src="/estampasur-logo.png" alt="EstampaSur: productos personalizados" width={1254} height={1254} sizes="(max-width: 640px) 240px, 320px" preload className="mb-8 h-auto w-60 rounded-2xl sm:w-80" />
           <h1 className="w-full max-w-4xl break-words text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight md:text-7xl">
             Personalizamos tus{" "}
             <span className="bg-gradient-to-r from-pink-500 via-cyan-500 to-green-500 bg-clip-text text-transparent">
