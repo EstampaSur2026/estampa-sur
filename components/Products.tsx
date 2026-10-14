@@ -1,69 +1,30 @@
+import { whatsappUrl } from "../data/contact";
+
+const productos = [
+  { title: "Poleras y polerones", icon: "👕", description: "Tu diseño, logo o idea en prendas para regalos, equipos y negocios." },
+  { title: "Tazas y mugs térmicos", icon: "☕", description: "Personaliza tus momentos con frases, fotos o la identidad de tu marca." },
+  { title: "Botellas y shoperos", icon: "🍶", description: "Consulta opciones de personalización para regalos y eventos." },
+  { title: "Llaveros", icon: "🔑", description: "Detalles personalizados para recuerdos, regalos y emprendimientos." },
+  { title: "Cojines y mouse pads", icon: "🎁", description: "Dale un toque personal a tus espacios con tus imágenes e ideas." },
+  { title: "Mochilas y gorras", icon: "🧢", description: "Opciones para equipos, negocios y regalos con identidad propia." },
+  { title: "Stickers y vinilo", icon: "🏷️", description: "Personaliza empaques, productos y detalles para tu marca." },
+  { title: "DTF y sublimación", icon: "🎨", description: "Conversemos sobre el material y la técnica adecuados para tu proyecto." },
+];
+
 export default function Products() {
-  const productos = [
-    {
-      title: "Poleras Personalizadas",
-      description: "Diseños únicos para regalos, equipos, negocios y emprendimientos.",
-      image: "/images/polera.jpg",
-    },
-    {
-      title: "Tazones Personalizados",
-      description: "Tazones con frases, logos, fotos y diseños especiales.",
-      image: "/images/tazon.jpg",
-    },
-    {
-      title: "Stickers",
-      description: "Stickers personalizados para marcas, eventos, regalos y packaging.",
-      image: "/images/stickers.jpg",
-    },
-    {
-      title: "DTF Textil",
-      description: "Impresiones DTF con gran calidad para prendas y proyectos personalizados.",
-      image: "/images/dtf.jpg",
-    },
-  ];
-
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <p className="text-sm font-semibold tracking-[0.2em] uppercase text-gray-500">
-            Nuestros productos
-          </p>
-          <h2 className="mt-3 text-3xl md:text-4xl font-bold text-gray-900">
-            Lo que personalizamos para ti
-          </h2>
-          <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
-            Creamos productos personalizados con estilo, dedicación y detalles
-            pensados para regalos, negocios y emprendimientos.
-          </p>
-        </div>
-
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
-          {productos.map((producto, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl shadow-md overflow-hidden border border-gray-100 hover:shadow-xl transition"
-            >
-              <div className="h-56 bg-gray-100 overflow-hidden">
-                <img
-                  src={producto.image}
-                  alt={producto.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-
-              <div className="p-5">
-                <h3 className="text-xl font-bold text-gray-900">
-                  {producto.title}
-                </h3>
-                <p className="mt-3 text-gray-600 text-sm leading-6">
-                  {producto.description}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+    <div className="mt-8">
+      <p className="mb-8 text-center text-gray-600">Consulta disponibilidad, cantidades y plazos al cotizar.</p>
+      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        {productos.map((producto) => (
+          <article key={producto.title} className="flex flex-col rounded-2xl border border-gray-200 bg-white p-6 shadow-sm">
+            <span aria-hidden="true" className="mb-5 text-4xl">{producto.icon}</span>
+            <h3 className="text-xl font-bold">{producto.title}</h3>
+            <p className="mt-3 flex-1 text-sm leading-6 text-gray-600">{producto.description}</p>
+            <a className="mt-6 inline-flex min-h-11 items-center justify-center rounded-lg bg-green-700 px-3 py-3 text-sm font-semibold text-white hover:bg-green-800" href={whatsappUrl(`Hola, quisiera cotizar ${producto.title.toLowerCase()}. ¿Me pueden orientar con opciones, valores y plazos?`)} aria-label={`Cotizar ${producto.title} por WhatsApp`}>Cotizar por WhatsApp</a>
+          </article>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }

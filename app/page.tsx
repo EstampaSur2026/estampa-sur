@@ -1,16 +1,13 @@
-import Link from "next/link";
+import { whatsappUrl } from "../data/contact";
+import Header from "../components/Header";
 import Products from "../components/Products";
-import Gallery from "../components/Gallery";
 import WhatsAppButton from "../components/WhatsAppButton";
 import Footer from "../components/Footer";
 
-const whatsappMessage = encodeURIComponent(
-  "Hola, me interesa un producto personalizado de Estampa Sur. Quisiera más información."
-);
-
 export default function Home() {
   return (
-    <main className="bg-white text-gray-900">
+    <main id="inicio" className="bg-white text-gray-900">
+      <Header />
       {/* HERO */}
       <section className="relative overflow-hidden bg-gradient-to-br from-white via-orange-50 to-cyan-50">
         <div className="mx-auto flex min-h-[calc(100vh-73px)] max-w-6xl flex-col items-center justify-center px-6 py-16 text-center">
@@ -21,7 +18,7 @@ export default function Home() {
           <div className="mb-6 text-3xl md:text-4xl font-bold tracking-[0.25em] uppercase bg-gradient-to-r from-pink-500 via-blue-500 to-green-500 text-transparent bg-clip-text">
           ESTAMPA SUR
           </div>
-          <h1 className="max-w-4xl text-5xl font-extrabold leading-tight tracking-tight md:text-7xl">
+          <h1 className="w-full max-w-4xl break-words text-3xl sm:text-5xl font-extrabold leading-tight tracking-tight md:text-7xl">
             Personalizamos tus{" "}
             <span className="bg-gradient-to-r from-pink-500 via-cyan-500 to-green-500 bg-clip-text text-transparent">
               ideas
@@ -43,10 +40,10 @@ export default function Home() {
             </a>
 
             <a
-              href={`https://wa.me/56923931601?text=${whatsappMessage}`}
+              href={whatsappUrl()}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-xl bg-green-500 px-7 py-3 font-medium text-white shadow-md transition hover:scale-105 hover:bg-green-600"
+              className="rounded-xl bg-green-700 px-7 py-3 font-medium text-white shadow-md transition hover:scale-105 hover:bg-green-800"
             >
               Hablar por WhatsApp
             </a>
@@ -115,7 +112,6 @@ export default function Home() {
 
           <div className="mt-10">
             <Products />
-            <Gallery />
           </div>
         </div>
       </section>
@@ -177,10 +173,10 @@ export default function Home() {
           </p>
 
           <a
-            href={`https://wa.me/56923931601?text=${whatsappMessage}`}
+            href={whatsappUrl()}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-8 inline-block rounded-xl bg-green-500 px-8 py-3 font-medium text-white transition hover:bg-green-600"
+            className="mt-8 inline-block rounded-xl bg-green-700 px-8 py-3 font-medium text-white transition hover:bg-green-800"
           >
             Solicitar información
           </a>

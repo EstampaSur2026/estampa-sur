@@ -1,7 +1,10 @@
+import Image from "next/image";
+import { whatsappLabel, whatsappUrl } from "../data/contact";
+
 export default function Footer() {
   return (
-    <footer className="bg-[#0b1220] text-white">
-      <div className="mx-auto max-w-6xl px-6 py-12">
+    <footer id="contacto" className="bg-[#0b1220] text-white">
+      <div className="mx-auto max-w-6xl px-6 pt-12 pb-24">
         <div className="grid gap-10 md:grid-cols-3">
           <div>
             <h3 className="text-2xl font-bold bg-gradient-to-r from-pink-500 via-blue-500 to-green-500 bg-clip-text text-transparent">
@@ -15,10 +18,14 @@ export default function Footer() {
 
           <div>
             <h4 className="text-lg font-semibold">Contacto</h4>
+            <a href="/whatsapp-qr.png" download className="mt-5 inline-flex flex-col items-start gap-2 underline underline-offset-4">
+              <Image src="/whatsapp-qr.png" width={144} height={144} alt="QR para contactar a Estampa Sur por WhatsApp" unoptimized />
+              <span>Descargar QR de WhatsApp</span>
+            </a>
             <ul className="mt-4 space-y-3 text-sm text-gray-300">
-              <li>WhatsApp: +56 9 2393 1601</li>
-              <li>Puerto Montt, Chile</li>
-              <li>Atención personalizada por mensaje</li>
+              <li><a className="underline underline-offset-4" href={whatsappUrl()}>WhatsApp: {whatsappLabel}</a></li>
+              <li>Al lado del CESFAM Antonio Varas, Puerto Montt, Chile</li>
+              <li><a className="break-all underline underline-offset-4" href="mailto:contacto@estampasurpm.cl">contacto@estampasurpm.cl</a></li><li>Consulta nuestros horarios por WhatsApp.</li>
             </ul>
           </div>
 

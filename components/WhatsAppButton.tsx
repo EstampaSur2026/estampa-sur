@@ -1,15 +1,17 @@
+import { whatsappUrl } from "../data/contact";
+
 export default function WhatsAppButton() {
-  const phone = "56956010398";
-  const message = "Hola, me gustaría cotizar un producto personalizado";
+const message = "Hola, me gustaría cotizar un producto personalizado";
 
   return (
     <a
-      href={`https://wa.me/${phone}?text=${encodeURIComponent(message)}`}
+      href={whatsappUrl(message)}
+      aria-label="Cotizar por WhatsApp con Estampa Sur"
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg transition"
+      className="fixed bottom-6 right-6 z-50 bg-green-700 hover:bg-green-800 text-white p-4 rounded-full shadow-lg transition"
     >
-      <svg
+      <svg aria-hidden="true"
         xmlns="http://www.w3.org/2000/svg"
         className="h-6 w-6"
         fill="currentColor"
